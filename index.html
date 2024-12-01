@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaflet GeoJSON</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="map" style="height: 500px;"></div>
+  
+  <script>
+    var geojsonURL = 'https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=13Xd9GDSsPNRRlUVgSvG-KJSZIsNa1DeB';
+    
+    fetch(geojsonURL)
+        .then(response => response.json())
+        .then(data => {
+            L.geoJSON(data).addTo(map); // Assuming Leaflet is already initialized
+        });
+</script>
+
+
+  </script>
+</body>
+</html>
